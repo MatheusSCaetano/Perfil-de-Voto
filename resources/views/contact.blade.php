@@ -91,7 +91,30 @@
             padding: 20px;
             font-size: 0.85rem;
             color: #64748b;
+        }    
+        .nav {
+            display: flex;
+            gap: 20px;
         }
+
+        .nav-link {
+            text-decoration: none;
+            color: #e5e7eb;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: #1e293b;
+        }
+
+        .nav-link.active {
+            background-color: #38bdf8;
+            color: #020617;
+            font-weight: bold;
+        }
+
     </style>
 </head>
 <body>
@@ -99,9 +122,9 @@
 <header>
     <img src="{{ asset('images/logo.png') }}" width="80" height="80" alt="Logo">
     <nav>
-        <a href="{{ route('home') }}">Home</a>
-        <a href="{{ route('contact') }}">Contact</a>
-        <a href="{{ route('about') }}">About</a>
+        <a href="{{ route('home') }}" class="nav-link">Home</a>
+        <a href="{{ route('contact') }}" class="nav-link active">Contact</a>
+        <a href="{{ route('about') }}" class="nav-link">About</a>
 
     </nav>
 </header>
