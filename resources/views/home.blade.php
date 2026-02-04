@@ -19,8 +19,8 @@
         }
 
         header {
-            padding: 20px 40px;
-            border-bottom: 1px solid #1e293b;
+            padding: 10px 20px;
+            border-bottom: 1px solid #38bdf8;
         }
 
         header h1 {
@@ -94,7 +94,13 @@
 <body>
 
 <header>
-    <h1>Perfil Político</h1>
+    <img src="{{ asset('images/logo.png') }}" width="80" height="80" alt="Logo">
+    <nav>
+        <a href="{{ route('home') }}">Home</a>
+        <a href="{{ route('contact') }}">Contact</a>
+        <a href="{{ route('about') }}">About</a>
+
+    </nav>
 </header>
 
 <main>
