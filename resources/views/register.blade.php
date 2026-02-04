@@ -117,64 +117,31 @@
 
     </style>
 </head>
-
 <body>
-
-<header>
-    <img src="{{ asset('images/logo.png') }}" width="80" height="80" alt="Logo">
-    <nav>
-        <a href="{{ route('home') }}" class="nav-link active">Home</a>
-        <a href="{{ route('contact') }}" class="nav-link ">Contact</a>
-        <a href="{{ route('about') }}" class="nav-link ">About</a>
-    </nav>
-</header>
-
-<main>
-    <div class="container">
-        <h2>Descubra quem mais representa você</h2>
-
-        <p>
-            Responda algumas perguntas sobre seus valores, ideias e prioridades.
-            Com base nas suas respostas, mostramos qual político mais se aproxima
-            do seu perfil para a próxima eleição.
-        </p>
-
-        <div class="alert">
-            ⚠️ Este site não indica em quem você deve votar.  
-            O objetivo é apenas informar e comparar posições políticas.
-        </div>
-
-        <button>Iniciar questionário</button>
-
-        <!-- 🔵 FORMULÁRIO DE LOGIN ADICIONADO -->
-        <div style="margin-top:35px;border-top:1px solid #1e293b;padding-top:25px;text-align:left;">
-            <h3 style="margin-bottom:15px;text-align:center;">Login</h3>
+    <header>
+        <img src="{{ asset('images/logo.png') }}" width="80" height="80" alt="Logo">
+        <nav>
+            <a href="{{ route('home') }}" class="nav-link active">Home</a>
+            <a href="{{ route('contact') }}" class="nav-link ">Contact</a>
+            <a href="{{ route('about') }}" class="nav-link ">About</a>
+        </nav>
+    </header>
+     <div style="margin-top:35px;border-top:1px solid #1e293b;padding-top:25px;text-align:left;">
+            <h3 style="margin-bottom:15px;text-align:center;">Registrar</h3>
 
             <form method="POST" action="{{ route('login') }}">
                 @csrf
-
-                <input type="email" name="email" placeholder="Seu e-mail" required
+                <input type="text" name="name" placeholder="Seu Nome" required
+                    style="width:100%;padding:12px;margin-bottom:10px;border-radius:8px;border:1px solid #1e293b;background:#020617;color:#e5e7eb;">
+                
+                    <input type="email" name="email" placeholder="Seu e-mail" required
                     style="width:100%;padding:12px;margin-bottom:10px;border-radius:8px;border:1px solid #1e293b;background:#020617;color:#e5e7eb;">
 
                 <input type="password" name="password" placeholder="Senha" required
                     style="width:100%;padding:12px;margin-bottom:15px;border-radius:8px;border:1px solid #1e293b;background:#020617;color:#e5e7eb;">
 
                 <button type="submit" style="width:100%;margin-bottom:10px;">
-                    Entrar
+                    Registrar
             </form>
-            </button>
-                <button type="submit" style="width:100%;">
-                <a href="{{ route('register') }}" class="register">Registre-se</a>
-            </button>
         </div>
-        <!-- 🔵 FIM LOGIN -->
-
-    </div>
-</main>
-
-<footer>
-    Projeto educacional • Informação acima de polarização
-</footer>
-
 </body>
-</html>
