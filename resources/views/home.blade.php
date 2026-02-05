@@ -110,7 +110,7 @@
             color: #020617;
             font-weight: bold;
         }
-        .register{
+        .register-button{
             text-decoration: none;
             color: #020617;
         }
@@ -164,7 +164,7 @@
             </form>
             </button>
                 <button type="submit" style="width:100%;">
-                <a href="{{ route('register') }}" class="register">Registre-se</a>
+                <a href="{{ route('register') }}" class="register-button">Registre-se</a>
             </button>
         </div>
         <!-- 🔵 FIM LOGIN -->
