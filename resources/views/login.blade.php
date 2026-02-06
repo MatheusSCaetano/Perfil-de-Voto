@@ -121,7 +121,7 @@
     <body>
 
         <header>
-            <img src="{{ asset('images/logo.png') }}" width="80" height="80" alt="Logo">
+            <img src="{{ asset('images\logo.png') }}" width="80" height="80" alt="Logo">
             <nav>
                 <a href="{{ route('home') }}" class="nav-link active">Home</a>
                 <a href="{{ route('contact') }}" class="nav-link ">Contact</a>
