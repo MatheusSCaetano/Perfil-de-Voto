@@ -145,30 +145,6 @@
         </div>
 
         <button>Iniciar questionário</button>
-
-        <!-- 🔵 FORMULÁRIO DE LOGIN ADICIONADO -->
-        <div style="margin-top:35px;border-top:1px solid #1e293b;padding-top:25px;text-align:left;">
-            <h3 style="margin-bottom:15px;text-align:center;">Login</h3>
-
-            <form method="POST" action="{{ route('login') }}">
-                @csrf
-
-                <input type="email" name="email" placeholder="Seu e-mail" required
-                    style="width:100%;padding:12px;margin-bottom:10px;border-radius:8px;border:1px solid #1e293b;background:#020617;color:#e5e7eb;">
-
-                <input type="password" name="password" placeholder="Senha" required
-                    style="width:100%;padding:12px;margin-bottom:15px;border-radius:8px;border:1px solid #1e293b;background:#020617;color:#e5e7eb;">
-
-                <button type="submit" style="width:100%;margin-bottom:10px;">
-                    Entrar
-            </form>
-            </button>
-                <button type="submit" style="width:100%;">
-                <a href="{{ route('register') }}" class="register-button">Registre-se</a>
-            </button>
-        </div>
-        <!-- 🔵 FIM LOGIN -->
-
     </div>
 </main>
 
