@@ -114,6 +114,55 @@
             text-decoration: none;
             color: #020617;
         }
+       .auth-container {
+    min-height: calc(100vh - 100px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .auth-card {
+        width: 100%;
+        max-width: 600px;
+        background-color: #020617;
+        padding: 35px;
+        border-radius: 14px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+
+    .auth-card h3 {
+        text-align: center;
+        margin-bottom: 25px;
+        font-size: 1.6rem;
+        color: #38bdf8;
+    }
+
+    .auth-card input {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 12px;
+        border-radius: 8px;
+        border: 1px solid #1e293b;
+        background: #020617;
+        color: #e5e7eb;
+    }
+
+    .auth-card button {
+        width: 100%;
+        padding: 14px;
+        margin-top: 10px;
+        border-radius: 8px;
+        background-color: #38bdf8;
+        color: #020617;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .auth-card button:hover {
+        background-color: #0ea5e9;
+        transform: scale(1.03);
+    }
 
     </style>
 </head>
@@ -126,22 +175,30 @@
             <a href="{{ route('about') }}" class="nav-link ">About</a>
         </nav>
     </header>
-     <div style="margin-top:35px;border-top:1px solid #1e293b;padding-top:25px;text-align:left;">
-            <h3 style="margin-bottom:15px;text-align:center;">Registrar</h3>
+        <main class="auth-container">
+            <div class="auth-card">
+                <h3>Registrar</h3>
 
-            <form method="POST" action="{{ route('login') }}">
-                @csrf
-                <input type="text" name="name" placeholder="Seu Nome" required
-                    style="width:100%;padding:12px;margin-bottom:10px;border-radius:8px;border:1px solid #1e293b;background:#020617;color:#e5e7eb;">
-                
-                    <input type="email" name="email" placeholder="Seu e-mail" required
-                    style="width:100%;padding:12px;margin-bottom:10px;border-radius:8px;border:1px solid #1e293b;background:#020617;color:#e5e7eb;">
+                <form method="POST" action="{{ route('register.store') }}">
+                    @if ($errors->any())
+                        <div style="background:#7f1d1d;padding:10px;border-radius:8px;margin-bottom:15px;">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    
+                    @csrf
+                    <input type="text" name="first_name" placeholder="Nome" required>
+                    <input type="text" name="last_name" placeholder="Sobrenome" required>
+                    <input type="email" name="email" placeholder="Seu e-mail" required>
+                    <input type="email" name="email_confirmation" placeholder="Confirme seu e-mail" required>
+                    <input type="password" name="password" placeholder="Senha" required>
 
-                <input type="password" name="password" placeholder="Senha" required
-                    style="width:100%;padding:12px;margin-bottom:15px;border-radius:8px;border:1px solid #1e293b;background:#020617;color:#e5e7eb;">
-
-                <button type="submit" style="width:100%;margin-bottom:10px;">
-                    Registrar
-            </form>
-        </div>
+                    <button type="submit">Registrar</button>
+                </form>
+            </div>
+    </main>
 </body>
