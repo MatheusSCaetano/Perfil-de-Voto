@@ -86,7 +86,7 @@
 </head>
 <body>
 
-    <<header>
+    <header>
         <img src="{{ asset('images/logo.png') }}" width="80" height="80" alt="Logo">
         <nav>
             <a href="{{ route('home') }}" class="nav-link">Home</a>
