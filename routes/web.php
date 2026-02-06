@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\registerController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Job;
 use Illuminate\Support\Arr;
@@ -11,9 +12,11 @@ Route::get('/home', function () {
     return view('home');
 })->middleware('auth')->name('home');
 
-Route::get('/login', function () {
+
+Route::get('/', function () {
     return view("login");
 })->name('login');;
+
 
 Route::get('/about', function () {
     return view("about");
@@ -27,10 +30,10 @@ Route::get('/register', function () {
     return view("register");
 })->name('register');;
 
-Route::Post('/login', [LoginController::class,'login'])->name('login');
 
+Route::Post('/', [LoginController::class,'login'])->name('login');
 
-
+Route::Post('/register', [registerController::class,'store'])->name('register.store');
 
 
 Route::get('/jobs', function () {
